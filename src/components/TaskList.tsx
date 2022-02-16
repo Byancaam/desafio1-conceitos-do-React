@@ -16,7 +16,7 @@ export function TaskList() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
 
     if (!newTaskTitle) {
-      return alert("Por favor preencher o campo com o título da Tarefa");
+      return console.log("Por favor preencher o campo com o título da Tarefa");
     }
 
     const newTask = {
@@ -46,6 +46,9 @@ export function TaskList() {
 
   function handleRemoveTask(id: number) {
     // Remova uma task da listagem pelo ID
+    const removeTask = tasks.filter(task => task.id != id);
+
+    setTasks(removeTask);
   }
 
   return (
